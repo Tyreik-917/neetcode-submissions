@@ -1,0 +1,22 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        
+        t_hashmap = {}
+        s_hashmap = {}
+
+        for s_letter in s:
+            if s_letter not in s_hashmap:
+                s_hashmap[s_letter] = 1
+
+            else:
+                s_hashmap[s_letter] += 1
+
+        for t_letter in t:
+            if t_letter not in t_hashmap:
+                t_hashmap[t_letter] = 1
+
+            else:
+                t_hashmap[t_letter] += 1
+
+
+        return t_hashmap == s_hashmap
